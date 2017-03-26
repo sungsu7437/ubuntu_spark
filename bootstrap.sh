@@ -10,7 +10,7 @@ service ssh start
 #$HADOOP_PREFIX/sbin/start-yarn.sh
 
 $HADOOP_PREFIX/bin/hdfs dfs -put $SPARK_HOME/jars /spark
-echo spark.yarn.jars hdfs:///spark/*.jar > $SPARK_HOME/conf/spark-defaults.conf
+echo spark.yarn.jars $SPARK_HOME/jars/*.jar > $SPARK_HOME/conf/spark-defaults.conf
 cp $SPARK_HOME/conf/metrics.properties.template $SPARK_HOME/conf/metrics.properties
 
 CMD=${1:-"exit 0"}
