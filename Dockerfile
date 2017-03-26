@@ -22,9 +22,6 @@ ENV PATH $PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 RUN mkdir $SPARK_HOME/yarn-remote-client
 ADD yarn-remote-client $SPARK_HOME/yarn-remote-client
 
-ENV BOOTSTRAP /etc/bootstrap.sh
-#RUN $BOOTSTRAP && $HADOOP_PREFIX/bin/hadoop dfsadmin -safemode leave && $HADOOP_PREFIX/bin/hdfs dfs -put /usr/local/spark-2.0.2-bin-hadoop2.6/lib /spark
-
 COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh
 RUN chmod 700 /etc/bootstrap.sh
