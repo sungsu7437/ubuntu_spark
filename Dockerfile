@@ -4,6 +4,8 @@ MAINTAINER sungsu7437
 USER root
 
 RUN apt-get install -y scala
+RUN apt-get install -y python
+RUN apt-get install -y python3
 
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.6.tgz
 RUN tar -xvzf spark-2.0.2-bin-hadoop2.6.tgz -C /usr/local
