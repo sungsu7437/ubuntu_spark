@@ -7,9 +7,9 @@ RUN apt-get install -y scala
 RUN apt-get install -y python
 RUN apt-get install -y python3
 
-RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.6.tgz
-RUN tar -xvzf spark-2.0.2-bin-hadoop2.6.tgz -C /usr/local
-RUN cd /usr/local && ln -s ./spark-2.0.2-bin-hadoop2.6 spark
+RUN wget https://people.apache.org/~pwendell/spark-nightly/spark-branch-2.2-bin/latest/spark-2.2.0-SNAPSHOT-bin-hadoop2.6.tgz
+RUN tar -xvzf spark-2.2.0-SNAPSHOT-bin-hadoop2.6.tgz -C /usr/local
+RUN cd /usr/local && ln -s ./spark-2.2.0-SNAPSHOT-bin-hadoop2.6 spark
 
 ENV HADOOP_COMMON_HOME /usr/local/hadoop
 ENV HADOOP_HDFS_HOME /usr/local/hadoop
